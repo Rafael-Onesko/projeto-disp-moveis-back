@@ -36,7 +36,9 @@ namespace Cadastro.Controllers
             {
                 return NotFound();
             }
-            return new UsuarioModel
+            
+            //return new UsuarioModel
+            UsuarioModel user = new()
             { 
                 Email = usuario.Email,
                 PrimeiroNome = usuario.PrimeiroNome,
@@ -44,7 +46,19 @@ namespace Cadastro.Controllers
                 Senha = usuario.Senha,
                 Admin = usuario.Admin
             };
-
+            //Roles
+            var rolesUsuario = await _context.RolesUsuario
+                .Join(_context.Roles, r => r.Role_ID, u => u.Role_ID, (r, u)=> new {r,u})
+                .Where(ru => ru.r.user_ID == usuario.Email)
+                .Select(ru => new RolesInscritoModel
+                {
+                    RoleNome = ru.u.RoleNome,
+                }).ToListAsync();
+            foreach (RolesInscritoModel role in rolesUsuario)
+            {
+                user.RolesUsuario.Add(role);
+            }
+            return user;
         }
 
         public class AuthChecker

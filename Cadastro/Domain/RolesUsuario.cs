@@ -8,7 +8,7 @@ namespace Cadastro.Domain
     public class RolesUsuario
     {
         [Column("user_ID")]
-        [Key] public int user_ID { get; set; }
+        [Key] public string user_ID { get; set; }
         [Column("Role_ID")]
         public int Role_ID { get; set; }
     }
