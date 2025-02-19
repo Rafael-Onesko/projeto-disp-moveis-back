@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\pessoal\\projeto\\projeto-back-end\\Cadastro\\Cadastro.csproj": {}
+    "C:\\pessoal\\DispostivosMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj": {}
   },
   "projects": {
-    "C:\\pessoal\\projeto\\projeto-back-end\\Cadastro\\Cadastro.csproj": {
+    "C:\\pessoal\\DispostivosMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\pessoal\\projeto\\projeto-back-end\\Cadastro\\Cadastro.csproj",
+        "projectUniqueName": "C:\\pessoal\\DispostivosMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj",
         "projectName": "Cadastro",
-        "projectPath": "C:\\pessoal\\projeto\\projeto-back-end\\Cadastro\\Cadastro.csproj",
+        "projectPath": "C:\\pessoal\\DispostivosMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj",
         "packagesPath": "C:\\Users\\rafael.onesko\\.nuget\\packages\\",
-        "outputPath": "C:\\pessoal\\projeto\\projeto-back-end\\Cadastro\\obj\\",
+        "outputPath": "C:\\pessoal\\DispostivosMoveis\\projeto-disp-moveis-back\\Cadastro\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

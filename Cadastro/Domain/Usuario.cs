@@ -7,13 +7,16 @@ namespace Cadastro.Domain
     [Table("Usuario")]
     public class Usuario
     {
-        [Column("Login")]
-        [Key] public string Login { get; set; }
-        [Column("Nome")]
-        public string Nome { get; set; }
+        [Column("Email")]
+        [Key] public string Email { get; set; }
+        [Column("PrimeiroNome")]
+        public string PrimeiroNome { get; set; }
+        [Column("UltimoNome")]
+        public string UltimoNome { get; set; }
         [Column("Senha")]
         public string Senha { get; set; }
-        [Column("Administrador")]
-        public bool Administrador { get; set; }
+        [Column("Admin")]
+        public bool Admin { get; set; }
+
     }
 }

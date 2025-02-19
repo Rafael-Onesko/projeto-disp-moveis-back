@@ -21,16 +21,16 @@ namespace Cadastro.Controllers
         public async Task<ActionResult<IEnumerable<UsuariosModel>>> GetUsuarios()
         {
             var usuarios = await _context.Usuarios
-                .Select(u => new UsuariosModel { Login = u.Login, Nome = u.Nome })
+                .Select(u => new UsuariosModel { Email = u.Email, Nome = u.PrimeiroNome + " " + u.UltimoNome })
                 .ToListAsync();
             return Ok(usuarios);
         }
 
         // GET: api/Usuarios/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<UsuarioModel>> GetUsuario(string id)
+        [HttpGet("{email}")]
+        public async Task<ActionResult<UsuarioModel>> GetUsuario(string email)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
+            var usuario = await _context.Usuarios.FindAsync(email);
 
             if (usuario == null)
             {
@@ -38,24 +38,25 @@ namespace Cadastro.Controllers
             }
             return new UsuarioModel
             { 
-                Login = usuario.Login,
-                Nome = usuario.Nome,
+                Email = usuario.Email,
+                PrimeiroNome = usuario.PrimeiroNome,
+                UltimoNome = usuario.UltimoNome,
                 Senha = usuario.Senha,
-                Administrador = usuario.Administrador
+                Admin = usuario.Admin
             };
 
         }
 
         public class AuthChecker
         {
-            public string Login { get; set; }
+            public string Email { get; set; }
             public string Senha { get; set; }
         }
 
         [HttpPost("Auth")]
         public ActionResult<bool> GetUsuarioSenha(AuthChecker auth)
         {
-            var usuario = _context.Usuarios.FirstOrDefault(u => ((u.Login == auth.Login)));
+            var usuario = _context.Usuarios.FirstOrDefault(u => ((u.Email == auth.Email)));
 
             if (usuario == null)
             {
@@ -68,15 +69,16 @@ namespace Cadastro.Controllers
         // POST: api/Usuarios
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<bool>> PostUsuario(UsuarioModel usuario, string id = null)
+        public async Task<ActionResult<bool>> PostUsuario(UsuarioModel usuario, string email = null)
         {
-            if (id == null) { 
+            if (email == null) { 
                 _context.Usuarios.Add(new Usuario() 
                 { 
-                    Login = usuario.Login,
-                    Nome = usuario.Nome,
+                    Email = usuario.Email,
+                    PrimeiroNome = usuario.PrimeiroNome,
+                    UltimoNome = usuario.UltimoNome,
                     Senha = usuario.Senha,
-                    Administrador = usuario.Administrador
+                    Admin = usuario.Admin
                 });
                 try
                 {
@@ -84,7 +86,7 @@ namespace Cadastro.Controllers
                 }
                 catch (DbUpdateException)
                 {
-                    if (UsuarioExists(usuario.Login))
+                    if (UsuarioExists(usuario.Email))
                     {
                         return false;
                     }
@@ -97,11 +99,12 @@ namespace Cadastro.Controllers
             }
             else
             {
-                var user = await _context.Usuarios.FindAsync(id);
-                user.Login = usuario.Login;
-                user.Nome = usuario.Nome;
+                var user = await _context.Usuarios.FindAsync(email);
+                user.Email = usuario.Email;
+                user.PrimeiroNome = usuario.PrimeiroNome;
+                user.UltimoNome = usuario.UltimoNome;
                 user.Senha = usuario.Senha;
-                user.Administrador = usuario.Administrador;
+                user.Admin = usuario.Admin;
                 
                 _context.Usuarios.Update(user);
                 await _context.SaveChangesAsync();
@@ -126,7 +129,7 @@ namespace Cadastro.Controllers
         }
         private bool UsuarioExists(string id)
         {
-            return _context.Usuarios.Any(e => e.Login == id);
+            return _context.Usuarios.Any(e => e.Email == id);
         }
     }
 }

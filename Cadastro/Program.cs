@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
-const string SQLroute = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;TrustServerCertificate=True;";
+const string SQLroute = "Server=localhost\\SQLEXPRESS;Database=projeto_site_db;Trusted_Connection=True;TrustServerCertificate=True;";
 // Add services to the container.
 
 builder.Services.AddControllers();

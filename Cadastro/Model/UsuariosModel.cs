@@ -2,7 +2,7 @@
 {
     public class UsuariosModel
     {
-        public string Login { get; set; }
+        public string Email { get; set; }
         public string Nome { get; set; }
     }
 }
