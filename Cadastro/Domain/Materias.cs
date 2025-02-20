@@ -8,13 +8,13 @@ namespace Cadastro.Domain
     public class Materias
     {
         [Column("Materia_ID")]
-        [Key] public int Materia_ID { get; set; }
+        [Key] public string Materia_ID { get; set; }
         [Column("Materia_Nome")]
         public string Materia_Nome { get; set; }
         [Column("Materia_Bloco")]
         public string Materia_Bloco { get; set; }
         [Column("Professor_ID")]
-        public int Professor_ID { get; set; }
+        public string Professor_ID { get; set; }
         [Column("Professor_Nome")]
         public string Professor_Nome { get; set; }
     }

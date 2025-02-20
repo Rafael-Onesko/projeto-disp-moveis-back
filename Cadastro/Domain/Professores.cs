@@ -8,7 +8,7 @@ namespace Cadastro.Domain
     public class Professores
     {
         [Column("Professor_ID")]
-        [Key] public int Professor_ID { get; set; }
+        [Key] public string Professor_ID { get; set; }
         [Column("Professor_Nome")]
         public string Professor_Nome { get; set; }
     }

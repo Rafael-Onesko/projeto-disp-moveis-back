@@ -4,14 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cadastro.Domain
 {
-    [Table("RolesUsuario")]
-    public class RolesUsuario
+    [Table("MateriasUsuario")]
+    public class MateriasUsuario
     {
         [Column("relacao_ID")]
-        [Key]public int relacao_ID { get; set; }
+        [Key] public int relacao_ID { get; set; }
         [Column("user_ID")]
         public string user_ID { get; set; }
-        [Column("Role_ID")]
-        public int Role_ID { get; set; }
+        [Column("Materia_ID")]
+        public string Materia_ID { get; set; }
     }
 }

@@ -14,6 +14,7 @@ namespace Cadastro.Domain
         public DbSet<RolesUsuario> RolesUsuario { get; set; }
         public DbSet<Roles> Roles { get; set; }
         public DbSet<Materias> Materias { get; set; }
+        public DbSet<MateriasUsuario> MateriasUsuario { get; set; }
 
     }
 }
