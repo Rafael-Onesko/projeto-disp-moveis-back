@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\pessoal\\DispostivosMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj": {}
+    "E:\\Stuff\\Workspaces\\DispMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj": {}
   },
   "projects": {
-    "C:\\pessoal\\DispostivosMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj": {
+    "E:\\Stuff\\Workspaces\\DispMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\pessoal\\DispostivosMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj",
+        "projectUniqueName": "E:\\Stuff\\Workspaces\\DispMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj",
         "projectName": "Cadastro",
-        "projectPath": "C:\\pessoal\\DispostivosMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj",
-        "packagesPath": "C:\\Users\\rafael.onesko\\.nuget\\packages\\",
-        "outputPath": "C:\\pessoal\\DispostivosMoveis\\projeto-disp-moveis-back\\Cadastro\\obj\\",
+        "projectPath": "E:\\Stuff\\Workspaces\\DispMoveis\\projeto-disp-moveis-back\\Cadastro\\Cadastro.csproj",
+        "packagesPath": "C:\\Users\\Oneskau\\.nuget\\packages\\",
+        "outputPath": "E:\\Stuff\\Workspaces\\DispMoveis\\projeto-disp-moveis-back\\Cadastro\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\rafael.onesko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Oneskau\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -25,8 +25,8 @@
           "net6.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://git.mps.com.br/api/packages/MPS/nuget/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {

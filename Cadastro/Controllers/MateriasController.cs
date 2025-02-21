@@ -28,14 +28,15 @@ namespace Cadastro.Controllers
                     Materia_ID = u.Materia_ID,
                     Materia_Nome = u.Materia_Nome,
                     Materia_Bloco = u.Materia_Bloco,
-                    Professor_Nome = u.Professor_Nome
+                    Professor_Nome = u.Professor_Nome,
+                    Professor_ID = u.Professor_ID
                 })
                 .ToListAsync();
             return Ok(materias);
         }
 
         // GET: api/Materias/5
-        [HttpGet("{email}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<MateriasModel>> GetMateria(string id)
         {
             var materia = await _context.Materias.FindAsync(id);

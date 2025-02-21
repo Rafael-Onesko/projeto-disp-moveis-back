@@ -28,7 +28,7 @@ namespace Cadastro.Controllers
         }
 
         // GET: api/Roles/5
-        [HttpGet("{email}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<RolesModel>> GetRole(int id)
         {
             var role = await _context.Roles.FindAsync(id);
@@ -50,7 +50,7 @@ namespace Cadastro.Controllers
         // POST: api/Roles
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<bool>> PostRole(RolesModel Role, string id)
+        public async Task<ActionResult<bool>> PostRole(RolesModel Role, int id)
         {
             var RoleExiste = await _context.Roles.FindAsync(id);
             if (RoleExiste == null)

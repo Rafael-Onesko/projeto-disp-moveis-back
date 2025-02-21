@@ -110,7 +110,6 @@ namespace Cadastro.Controllers
             else
             {
                 var prof = await _context.Professores.FindAsync(email);
-                //prof.Professor_ID = professor.Professor_ID;
                 prof.Professor_Nome = professor.Professor_Nome;
 
                 var materiasProfessor = await _context.Materias.Where(m => m.Professor_ID == prof.Professor_ID)
